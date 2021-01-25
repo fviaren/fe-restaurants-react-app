@@ -1,0 +1,12 @@
+.Layout {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.Credit {
+    font-size: 10px;
+    text-decoration: none;
+    color: black;
+}

@@ -1,12 +1,16 @@
 import React from 'react';
 
 import Restaurants from '../Restaurants/Restaurants';
+import './Section.css';
 
-const section = ({sectionData}) => {
+const section = ({sectionData, slidesToShow}) => {
     return (
-        <div>
+        <div className="Section">
             <h1>{sectionData.title}</h1>
-            <Restaurants sectionData={sectionData}/>
+            <Restaurants 
+                sectionData={sectionData}
+                slidesToShow={slidesToShow}
+            />
         </div>
     );
 };

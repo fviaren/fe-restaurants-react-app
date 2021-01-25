@@ -1,0 +1,10 @@
+.Section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+.Section h1 {
+    text-shadow: 2px 2px #ccc;
+}
