@@ -1,3 +1,7 @@
+.carousel-initialized {
+    padding-left: 35px!important;
+}
+
 .carousel-prev, .carousel-next {
     height: 30px;
     width: 30px;
@@ -8,7 +12,7 @@
 }
 
 .carousel-prev {
-    transform: translate(10px, 90px);
+    transform: translate(0, 90px);
 }
 
 .carousel-next {
@@ -50,11 +54,10 @@
 }
 
 @media (max-width: 599px) {
-    .carousel-prev {
-        transform: translate(10px, 60px);
+    .carousel-prev, .carousel-next {
+        display: none;
     }
-    
-    .carousel-next {
-        transform: translate(-10px, 60px);
+    .carousel-initialized {
+        padding-left: 0!important;
     }
 }

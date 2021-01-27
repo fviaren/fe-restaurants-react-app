@@ -2,25 +2,23 @@ import React from 'react';
 import { Blurhash } from "react-blurhash";
 import ClassNames from 'classnames';
 
+import RespContext from '../../../context/resp-context';
 import './Restaurant.css';
 
 const restaurant = ({ data }) => {
-    let imageSize = [180,138]
-    if(window.innerWidth < 600) {
-        imageSize = [100, 93]
-    }
-
     return (
         <div className="Restaurant">
-            <Blurhash 
-                className="Image"
-                hash={data.blurhash}
-                width={imageSize[0]}
-                height={imageSize[1]}
-                resolutionX={32}
-                resolutionY={32}
-                punch={1}
-            />
+            <RespContext.Consumer>
+                {(context) => <Blurhash 
+                    className="Image"
+                    hash={data.blurhash}
+                    width={context.imageSize[0]}
+                    height={context.imageSize[1]}
+                    resolutionX={32}
+                    resolutionY={32}
+                    punch={1}
+                />}
+            </RespContext.Consumer>
             <div className="Data">
                 <h3>{data.name}</h3>
                 <div className="Info">
@@ -37,7 +35,6 @@ const restaurant = ({ data }) => {
                     </div>
                 </div>
             </div>
-            
         </div>
         
     );
