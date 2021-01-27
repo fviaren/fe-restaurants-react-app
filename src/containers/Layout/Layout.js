@@ -14,22 +14,22 @@ class Layout extends Component {
 
     updateSlides = () => {
         if(window.innerWidth < 800) {
-            this.setState({slidesToShow: 3})
+            this.setState({ slidesToShow: 3 })
         } else if (window.innerWidth < 1100){
-            this.setState({slidesToShow: 4})
+            this.setState({ slidesToShow: 4 })
         } else {
-            this.setState({slidesToShow: 5})
+            this.setState({ slidesToShow: 5 })
         }
     }
     
 
-    componentDidMount() {
+    componentDidMount () {
         this.updateSlides()
-        this.setState({sections: discovery_data.sections});
+        this.setState({ sections: discovery_data.sections });
         window.addEventListener('resize', this.updateSlides);
     }
     
-    render() {
+    render () {
         let sections = <Spinner />
         if (this.state.sections) {
             sections = this.state.sections.map(section => (

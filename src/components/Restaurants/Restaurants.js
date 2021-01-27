@@ -4,7 +4,7 @@ import Slider from 'infinite-react-carousel';
 import Restaurant from './Restaurant/Restaurant';
 import './Restaurants.css';
 
-const restaurants = ({sectionData, slidesToShow}) => {
+const restaurants = ({ sectionData, slidesToShow }) => {
     const restaurants = sectionData.restaurants.map( restaurant => (
         <Restaurant 
             data={restaurant}

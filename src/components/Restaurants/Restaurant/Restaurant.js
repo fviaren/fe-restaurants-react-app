@@ -4,14 +4,11 @@ import ClassNames from 'classnames';
 
 import './Restaurant.css';
 
-const restaurant = ({data}) => {
+const restaurant = ({ data }) => {
     let imageSize = [180,138]
     if(window.innerWidth < 600) {
         imageSize = [100, 93]
     }
-    // let closedClass = {ClassNames({
-    //     'Closed': closed
-    // })}
 
     return (
         <div className="Restaurant">
