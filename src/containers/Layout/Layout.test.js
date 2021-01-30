@@ -3,11 +3,11 @@ import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 
-import { Layout } from './Layout';
+import Layout from './Layout';
 import Section from '../../components/Section/Section';
-import Spinner from '../../components/UI/Spinner/Spinner';
+import Spinner from '../../components/UI/Spinner/Spinner.txs';
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 describe('<Layout />', () => {
     let wrapper;
@@ -15,10 +15,11 @@ describe('<Layout />', () => {
         wrapper = shallow(<Layout />);
     });
     it('should resnder <Spinner /> if no restaurants data is received', () => {
-        expect(wrapper.find(Spinner)).toHaveLength(3);
+        expect(wrapper.find(Spinner)).toHaveLength(1);
     });
-    it('should render <Section /> 3 times if sections data is available', () => {
-        wrapper.setProps({ sectionData="some data" });
-        expect(wrapper.find(Section)).toHaveLength(3);
+    it('should render <Section /> for each section in the data received', () => {
+        const sectionsDataArray = [{ title: 'One' }, { title: '2' }]
+        wrapper.setProps({ sections: sectionsDataArray });
+        expect(wrapper.find(Section)).toHaveLength(sectionsDataArray.length);
     });
 });
