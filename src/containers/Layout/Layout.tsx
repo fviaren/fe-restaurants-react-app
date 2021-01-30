@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import Section from '../../components/Section/Section';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import './Layout.css';
+import { ISectionsProp } from '../../interface';
 
-const layout = ({ sections }) => {    
+const Layout: FC<ISectionsProp> = ({ sections }) => {    
     return (
         <div className="Layout" >
             {sections 
@@ -20,4 +21,4 @@ const layout = ({ sections }) => {
     );
 }
 
-export default layout;
+export default Layout;

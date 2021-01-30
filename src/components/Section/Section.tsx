@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import Restaurants from '../Restaurants/Restaurants';
 import './Section.css';
+import { ISectionProp } from '../../interface';
 
-const section = ({ sectionData }) => {
+const Section: FC<ISectionProp> = ({ sectionData }) => {
     return (
         <div className="Section">
             <h1>{sectionData.title}</h1>
@@ -14,4 +15,4 @@ const section = ({ sectionData }) => {
     );
 };
 
-export default section;
+export default Section;
