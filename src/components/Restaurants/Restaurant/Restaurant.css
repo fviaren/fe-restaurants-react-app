@@ -82,7 +82,6 @@
     padding-right: 5px;
 }
 
-
 @media (max-width: 599px) {
     .Info, .Rating {
         font-size: 10px;

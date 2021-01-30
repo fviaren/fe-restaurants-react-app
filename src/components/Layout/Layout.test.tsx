@@ -2,7 +2,6 @@ import React from 'react';
 import { configure, shallow, ShallowWrapper } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-
 import Layout from './Layout';
 import Section from '../Section/Section';
 import Spinner from '../UI/Spinner/Spinner';

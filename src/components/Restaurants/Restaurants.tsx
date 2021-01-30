@@ -1,8 +1,8 @@
 import React, { FC, useState, useEffect, useCallback }  from 'react';
 import Slider from 'infinite-react-carousel';
+
 import Restaurant from './Restaurant/Restaurant';
 import { ISectionData } from '../../interface';
-
 import './Restaurants.css';
 
 const getSlidesToShow = (width: number): number => {
@@ -11,7 +11,6 @@ const getSlidesToShow = (width: number): number => {
     } else if (width < 1100){
         return 4;
     }
-
     return 5;
 };
 

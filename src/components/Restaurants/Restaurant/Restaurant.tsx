@@ -2,14 +2,13 @@ import React, { FC, useState, useEffect, useCallback } from 'react';
 import { Blurhash } from "react-blurhash";
 import ClassNames from 'classnames';
 
-import './Restaurant.css';
 import { IRestaurantProp } from '../../../interface';
+import './Restaurant.css';
 
 const getThumbSize = (width: number): [number, number] => {
     if (width < 600) {
         return [100, 93];
     }
-
     return [180, 138];
 };
 
@@ -53,7 +52,6 @@ const Restaurant: FC<IRestaurantProp> = ({ data }) => {
                 </div>
             </div>
         </div>
-
     );
 };
 

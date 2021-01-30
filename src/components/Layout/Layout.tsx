@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 
 import Section from '../Section/Section';
 import Spinner from '../UI/Spinner/Spinner';
-import './Layout.css';
 import { ISectionsProp } from '../../interface';
+import './Layout.css';
 
 const Layout: FC<ISectionsProp> = ({ sections }) => {    
     return (

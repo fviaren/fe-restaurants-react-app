@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
 import Restaurants from '../Restaurants/Restaurants';
-import './Section.css';
 import { ISectionProp } from '../../interface';
+import './Section.css';
 
 const Section: FC<ISectionProp> = ({ sectionData }) => {
     return (

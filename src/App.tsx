@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
 import Layout from './components/Layout/Layout'
-import './App.css'
 import discovery_data from './data.json';
+import './App.css'
 
 const App: FC = () => {
   return (
