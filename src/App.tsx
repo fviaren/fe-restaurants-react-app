@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import Layout from './containers/Layout/Layout'
+import Layout from './components/Layout/Layout'
 import './App.css'
 import discovery_data from './data.json';
 

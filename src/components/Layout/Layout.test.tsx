@@ -4,8 +4,8 @@ import Adapter from 'enzyme-adapter-react-16';
 
 
 import Layout from './Layout';
-import Section from '../../components/Section/Section';
-import Spinner from '../../components/UI/Spinner/Spinner';
+import Section from '../Section/Section';
+import Spinner from '../UI/Spinner/Spinner';
 
 configure({ adapter: new Adapter() });
 

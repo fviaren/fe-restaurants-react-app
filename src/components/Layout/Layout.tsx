@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
-import Section from '../../components/Section/Section';
-import Spinner from '../../components/UI/Spinner/Spinner';
+import Section from '../Section/Section';
+import Spinner from '../UI/Spinner/Spinner';
 import './Layout.css';
 import { ISectionsProp } from '../../interface';
 
