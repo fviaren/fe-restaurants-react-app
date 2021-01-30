@@ -1,40 +1,40 @@
-import React, { FC, useState, useEffect }  from 'react';
-
+import React, { FC, useState, useEffect, useCallback }  from 'react';
+import Slider from 'infinite-react-carousel';
 import Restaurant from './Restaurant/Restaurant';
-import './Restaurants.css';
 import { ISectionData } from '../../interface';
 
-const Slider = require('infinite-react-carousel')
+import './Restaurants.css';
 
-const Restaurants: FC<ISectionData> = ({ sectionData }) => {
-    const [slidesToShow, setSlidesToShow] = useState(0);
-
-    const updateSlides = () => {
-        if (window.innerWidth < 800) {
-            setSlidesToShow(3)  
-        } else if (window.innerWidth < 1100){
-            setSlidesToShow(4)
-        } else {
-            setSlidesToShow(5)
-        }
+const getSlidesToShow = (width: number): number => {
+    if (width < 800) {
+        return 3;
+    } else if (width < 1100){
+        return 4;
     }
 
+    return 5;
+};
+
+const Restaurants: FC<ISectionData> = ({ sectionData }) => {
+    const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow(window.innerWidth));
+
+    const resizeHandler = useCallback(() => setSlidesToShow(getSlidesToShow(window.innerWidth)), []);
+
     useEffect(() => {
-        updateSlides();
-        window.addEventListener('resize', updateSlides);
+        window.addEventListener('resize', resizeHandler);
         return () => {
-            window.removeEventListener('resize', updateSlides);
+            window.removeEventListener('resize', resizeHandler);
         }
-    });
+    }, [resizeHandler]);
 
     const restaurants = sectionData.restaurants.map( restaurant => (
-        <Restaurant 
+        <Restaurant
             data={restaurant}
             key={restaurant.name}
         />
-    ));   
-    
-    return ( 
+    ));
+
+    return (
         <Slider
             className="Slider"
             rows={1}

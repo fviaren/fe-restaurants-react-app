@@ -8,7 +8,7 @@ const Section: FC<ISectionProp> = ({ sectionData }) => {
     return (
         <div className="Section">
             <h1>{sectionData.title}</h1>
-            <Restaurants 
+            <Restaurants
                 sectionData={sectionData}
             />
         </div>

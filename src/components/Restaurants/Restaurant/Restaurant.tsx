@@ -1,32 +1,33 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect, useCallback } from 'react';
 import { Blurhash } from "react-blurhash";
 import ClassNames from 'classnames';
 
 import './Restaurant.css';
 import { IRestaurantProp } from '../../../interface';
 
-const Restaurant: FC<IRestaurantProp> = ({ data }) => {
-    const [imageSize, setImageSize] = useState([180,138]);
-
-    const updateImageSize = () => {
-        if (window.innerWidth < 600) {
-        setImageSize([100, 93])
-        }  else {
-        setImageSize([180, 138])
-        }
+const getThumbSize = (width: number): [number, number] => {
+    if (width < 600) {
+        return [100, 93];
     }
 
+    return [180, 138];
+};
+
+const Restaurant: FC<IRestaurantProp> = ({ data }) => {
+    const [imageSize, setImageSize] = useState(getThumbSize(window.innerWidth));
+
+    const resizeHandler = useCallback(() => setImageSize(getThumbSize(window.innerWidth)), []);
+
     useEffect(() => {
-        updateImageSize();
-        window.addEventListener('resize', updateImageSize);
+        window.addEventListener('resize', resizeHandler);
         return () => {
-        window.removeEventListener('resize', updateImageSize);
+            window.removeEventListener('resize', resizeHandler);
         }
-    });
-    
+    }, [resizeHandler]);
+
     return (
         <div className="Restaurant">
-            <Blurhash 
+            <Blurhash
                 className="Image"
                 hash={data.blurhash}
                 width={imageSize[0]}
@@ -52,7 +53,7 @@ const Restaurant: FC<IRestaurantProp> = ({ data }) => {
                 </div>
             </div>
         </div>
-        
+
     );
 };
 
