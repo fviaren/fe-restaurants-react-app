@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import Layout from './containers/Layout/Layout'
 import './App.css'
-import { discovery_data } from './data';
+import discovery_data from './data.json';
 
 const App: FC = () => {
   return (

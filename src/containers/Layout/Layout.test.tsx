@@ -1,18 +1,18 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
+import { configure, shallow, ShallowWrapper } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 
 import Layout from './Layout';
 import Section from '../../components/Section/Section';
-import Spinner from '../../components/UI/Spinner/Spinner.txs';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 configure({ adapter: new Adapter() });
 
 describe('<Layout />', () => {
-    let wrapper;
+    let wrapper: ShallowWrapper;
     beforeEach(() => {
-        wrapper = shallow(<Layout />);
+        wrapper = shallow(<Layout sections={null}/>);
     });
     it('should resnder <Spinner /> if no restaurants data is received', () => {
         expect(wrapper.find(Spinner)).toHaveLength(1);

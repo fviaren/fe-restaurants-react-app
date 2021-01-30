@@ -1,4 +1,4 @@
-export const discovery_data = {
+{
     "sections": [
       {
         "title": "Popular Restaurants",
